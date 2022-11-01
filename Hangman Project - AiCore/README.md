@@ -5,7 +5,7 @@ Through milestones 1 & 2 of this project, I have coded the basics of a game of H
 
 The programme will carry out this task by selecting a random word from a world list before asking for user input. The user input will be validated through the use of 'if' statements that checks the length and context of what has been entered. 
 
-## Milestone 1 
+## Milestone 1 - Setting Up The Enviornment 
 
 The first step was to set up the GIT enviroment. GIT is used to run the command line. From here, i then intialised a repository on GITHub and updated the read.me file. 
 
@@ -19,7 +19,8 @@ Once updated, i was able to modify , stage, comit and clone my files from my sys
 ```git comit```  comits all files in the staged state. 
 
 
-## Milestone 2 
+## Milestone 2 - Creating Variables 
+
 ### Task 1 - Define a list of possible words 
  
  To complete the following task, i have classified a list of varibles containing the name of 5 fruits. 
@@ -70,7 +71,7 @@ To complete this block, I have added a 'while True' statment. The purpose of thi
 
 As shown above, whilst the user input is vald, the code wil then continue and ask the user to guess another letter. 
 
-## Milestone 3
+## Milestone 3 _ Checking If The Guess Is In The Word
 
 ### Task 1 - Iterativley check if the input is a valid guess 
 
@@ -112,4 +113,61 @@ Once the function has been called
 '```ask_for_inpit()```'
 the checks will run automatically, validating if the user input is a single alphabetical charecter. The steps highlighted in task 2 will be perfomred depending on if the while loop within the function returns true or false. 
 
+ ################################
 
+
+### Milestone 4 - Creating the class 
+
+At this stage, i have created the hangman class which will allow me to create a template for the object. WIthin this class, i have defined the finctions, methods and parameters of which are to be completed once the class is called. 
+
+The class has been initlaised through the ```__init__``` method whihc means that this methid  / methods are run everytime a new instance in initalised. 
+
+```num_lives``` and ```word_list``` have both been passed in as paramters of this class. 
+
+``` def Hangman(Nume_lives, word_list)```
+
+I then initlaised the instances of the class through the ```self```. The reason for this is becasue 'self', is a variable that represents that isntance of the class. 
+
+Once complete, i created methods running the class and defined what happens if the user input is not in the selectred random word. 
+
+Within the hangman class, the 'check guess' method has been created. 
+
+Firstly, the code checks if the input is in the word. This is achieved through an if statment. 
+
+In this method i have also determined the actions depending on if the user inout is in the random word, or if it is not. 
+
+I did this by runnung a for loop that cycls through each letter of the word, checking that the letter is equal to the guess and replacing the corresponding [_].  
+
+```if guess == self.word: #checks if guess is in word ``` 
+        ```self.word_guessed[i] = guess # adds guess to the word```
+        ```print(self.word_guessed) #replaces with guess```
+    ```self.num_letters = self.num_letters - 1 # reduces variable number by 1```
+
+When the guess is not in the word, the users lives are redcued by 1 and a message is displayed showing stating both that the guess is incorrect and the number of remaining lives. The guess is then added to the list of guesses. 
+
+
+else: 
+    self.num_lives - 1 #if anything else, lives reduced by 1 
+        print(f"Sorry, {guess} is not int he word.") # displays message 
+                
+        print(f"You have {self.num_lives} lives left.") # displayed number of lives left
+        self.list_of_guesses.append(guess)
+
+
+i then defined another methid within the hangman class which asks the user for an input. The code in the body of this method checks the context of the input and ensures it is valid thorugh the if statment. 
+
+    if(len(guess)==1) and guess.alpha():
+                
+                print("Oops! Invalid answer. Please enter a single aplhabetical charecter")
+
+Additionally, i have used the elif fution to determine the actions if the letter has already been guessed. If it has not yet been guessed, the code will add the letter to the list_of_guesses.
+
+# Milestone 5 - Code the Logic of The Game
+
+Finally, now that i have coded the basics of the game, i am able to put it together.
+
+For this, i cerated a new function names 'play_game' and once again, passed the word_list in as a parameter.
+
+def play_game(word_list)
+
+#### AT STEP 1 MILESTONE 5 ###

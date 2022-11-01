@@ -11,7 +11,7 @@ word = random.choice(word_list)
 
 #SELF - in this instance of the class 
 class Hangman:
-    def __init__ (self, word_list, num_lives=5):
+    def __init__ (self, word_list, num_lives = 5):
         self.word = random.choice(word_list)
         self.word_guessed = [''] * len(self.word)
         self.num_letters = len(set(self.word).difference(set(self.word_guessed)))
@@ -39,7 +39,7 @@ class Hangman:
             else: 
                 self.num_lives -1 #if anything else, lives reduced by 1 
                 print(f"Sorry, {guess} is not int he word.") # displays message 
-                print(f"you have {self.num_lives} lives left.") # displayed number of lives left
+                print(f"You have {self.num_lives} lives left.") # displayed number of lives left
         self.list_of_guesses.append(guess) #adds guess to list of guesses
         
     def ask_for_input(self, guess):
@@ -48,17 +48,15 @@ class Hangman:
                 print(guess)
 
                 if(len(guess) == 1) and guess.alpha(): #if lenth is = 1 and alphabetic
-                    print("Invalid letter. Please, enter a single alphabetical character.")      
+                    print("Invalid input. Please, enter a single alphabetical character.")      
 
                 if guess in self.list_of_guesses:   #if charecter has already been guessed
                     print("You have already tried that letter!")                    
-            ## not working - will not display message saying letter already guessed. 
+    #################   ## not working - will not display message saying letter already guessed. ######################
 
                 else: self.check_guess(guess)
                 self.list_of_guesses.append(guess)
                 break 
-
-
 
     def ask_for_input(self, guess):
         while True:
@@ -73,6 +71,10 @@ class Hangman:
 
             else: self.check_guess(guess)
             list_of_guesses =+ guess 
-## task 2 does not add guess to list of guesses or dispay message saying that letter has already been guessed
+## task 2 does not add guess to list of guesses or dispay message saying that letter has already been guessed - ends game?
+    # DISPLAYS MESSAGE FOR INCORRECT INPUT - THEN ENDS GAME AFTER NEXT GUESS 
+
+    
         
-### Task 3 
+
+
