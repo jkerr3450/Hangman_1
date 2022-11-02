@@ -1,15 +1,11 @@
-# Hangman
-## Project No.1 
+# AiCore - Hangman
 
-Through milestones 1 & 2 of this project, I have coded the basics of a game of Hangman. I have inistalised a repository on GITHub where the code can be update through a read.me file, comitted and cloned. 
+## Milestone 1 - Setting up the enviornment. 
+Through milestone one of the project, i have set up the enviornment of which my code can be cloned, edited and viewed by others. 
 
-The programme will carry out this task by selecting a random word from a world list before asking for user input. The user input will be validated through the use of 'if' statements that checks the length and context of what has been entered. 
+Firstly, I set up the GIT enviornment which is used to run the command line. From here, i then intialised a repository on GITHub where my work can be stored and viewed.  
 
-## Milestone 1 - Setting Up The Enviornment 
-
-The first step was to set up the GIT enviroment. GIT is used to run the command line. From here, i then intialised a repository on GITHub and updated the read.me file. 
-
-Once updated, i was able to modify , stage, comit and clone my files from my system to initalise the project. 
+Once created, i was able to modify , stage, commit and clone my files from my system to initalise the project. 
 
 ### Git commands: 
 ```git init```       to create repository.
@@ -21,34 +17,22 @@ Once updated, i was able to modify , stage, comit and clone my files from my sys
 
 ## Milestone 2 - Creating Variables 
 
-### Task 1 - Define a list of possible words 
- 
- To complete the following task, i have classified a list of varibles containing the name of 5 fruits. 
-
-These variables have been added to the class 'word_list'
+A variable is a word assigned to an object, in this case the objects of the my code were fruits. The variable name given to them was 
 
 ```word_list = ["apple", "banana", "orange", "pear", "strawberry"]```
 
-### Task 2 - Choose a random word from the list. 
- For my code to select a random word from the list, I have ued the random method which selects a random variable from the word_list: 
+The aim of the game was for a random word to be chosen from this list and the user then guesses each letter. To do this, i used the both the 'random' and 'input' methods. 
 
  ```word = random.choice(word_list)```
  
-Once selected, the print function will allow the code to print the random variable from the word list. 
+This code selects a random word from the list and assigns it to the variable 'word'. 
 
-```print(word)```
-### Task 3 - Ask user for input function. 
-
- The next step in my code is to ask the user for input. This is acheived by using the input function. With this, the user will be prompted for an input by displaying the message "Guess the missing ketter". 
+ The next step in my code is to ask the user for input. This is acheived by using the input function. With this, the user will be prompted for an input by displaying the message "Guess the missing letter". 
 
  ```guess = input("Guess the missing letter")```
 ```print(guess)```
 
-### Task 4 - validate user input
-
- The final task of milestone 2 requires the user input to be validated. For this, i used "if" statements to validate both the length and context of the input.
-
- The code has been created so that it checs that the input if 1 charetcer and alphabetical. 
+For the user input to be valid, the code will chck if the input is a single alphabetical charecter. I have created an if statment to carry out this task which allowed me to determine the actions if the input was invalid. 
 
 ```if(len(guess) == 1) and guess.isalpha()```   
 
@@ -56,67 +40,43 @@ If both conditions are met, then a print function will display the folliwng mess
 
             "Good Guess!"
 
-An "else" parameter has been added to the 'if' statments to determine the actions if the user enters an invalid input. 
+An "else" statment has been added so that in the case that the requirments are not met, the folliwng error message is displayed: 
 
-The else parameter will come in to play when any condition is not met. 
+```else:```
+        ```print("Oops! invalid answer!")```
 
-Therfore, if the input is not a sinlge alphabetic charecter, then the folliwng error messgae is displayed: 
 
-        "Oops! invalid answer!"
+## Milestone 3 - Checking If The Guess Is In The Word
 
-To complete this block, I have added a 'while True' statment. The purpose of this is to restart the cycle only whenever a valid input has been entered. This will allow continuity between the user being asked for an input and the code validating it.
+To validate the users input, i created a 'while' loop with the condition set to true. The loop asks the user for an input and validates it by checking if it is a single aplhabetical letter using the following code: 
 
 ```while True:```
     ```guess = input("Guess the missing Letter")```
-
-As shown above, whilst the user input is vald, the code wil then continue and ask the user to guess another letter. 
-
-## Milestone 3 _ Checking If The Guess Is In The Word
-
-### Task 1 - Iterativley check if the input is a valid guess 
-
-To validate the users input, i created a 'while' loop with the condition set to true. The purpose of this is to ensure the code runs smoothly if the parameters of the while loop are true based on the users input. 
-
-The loop validates the inout by checking if it is a single aplhabetical letter using the following code: 
-
-```if(len(guess) == 1) and guess.isalpha()```
+    
+            ```if(len(guess) == 1) and guess.isalpha()```
+            ```break```
 
 If this passes, the code will break they while loop. 
 If either of the 2 conditions return false, then an error message is displayed showing: 
 
     Invalid letter. Please, enter a single alphabetical character.
 
-### Task 2 - Check if the guess is in the word
+Now that i have coded the logic of the game to determine if the input is valid or invalid, the next step was to create the checks to determine if the inut is in the word. 
 
-The purpose of the 'if' statement is to verify if the users guess is in the word seleccted from the list. 
-
-If so, the user will see a message stating that the guess is in the word. 
+I acheived this thorugh the use of another i'f' statement 
 
 ```if(guess in word):```
         ```print(f"Good guess! {guess} is in the word")```
 
-To ensure that the if statment worked correctly and that the actual guessed letter was displayed instead of {guess}, i had to assign the word guess to a variable. 
-
-The next step was to code an else block that determined the actions if the guess was not in the selected random word. 
+The else method is added to the if block which creates the outcome if the input is not in the word. 
 
 ```else:```
 
 ```print(f"Sorry, {guess} is not in the word. Try again.")```
 
-### Task 3 - Create a function to run checks 
+Furthermore, i then created fucntions to hosue the code that asks fir user input and checks the user input. The use of functions allows for the code to be read easily, structured more clearly and avoids reptition. 
 
-The final task was the create a function to run the checks that i have set out. 
-
-to do this, i have defined a fucntion that will check the users input for the required data. 
-
-Once the function has been called
-'```ask_for_inpit()```'
-the checks will run automatically, validating if the user input is a single alphabetical charecter. The steps highlighted in task 2 will be perfomred depending on if the while loop within the function returns true or false. 
-
- ################################
-
-
-### Milestone 4 - Creating the class 
+## Milestone 4 - Creating the class 
 
 At this stage, i have created the hangman class which will allow me to create a template for the object. WIthin this class, i have defined the finctions, methods and parameters of which are to be completed once the class is called. 
 
@@ -170,4 +130,22 @@ For this, i cerated a new function names 'play_game' and once again, passed the 
 
 def play_game(word_list)
 
-#### AT STEP 1 MILESTONE 5 ###
+I then created an instance of the hangman class and assigned ot to the variable 'game'. 'word_list' and 'guess' were passed in as arguments. 
+
+Lastly, i created anotehr while loop which checked if the `num_lives` is 0, if the `num_letters` is greater than 0 and if the `num_lives` is not 0 and the `num_letters` is not greater than 0. 
+
+The correspondong print message was displayed depending on which statment matched. 
+
+    if(game.num_lives == 0):
+            print(f"You Lost! The word was {game.word}")
+            break
+
+        elif(game.num_letters > 0):
+            game.ask_for_input()
+
+        elif(game.num_lives > 0 and game.num_letters == 0):
+                print("Congratulations. You won the game!")
+                break
+    
+
+

@@ -1,7 +1,7 @@
 import abc 
 import random
 
-word_list = ["apple", "banana", "orange," "pear", "plum"]
+word_list = ["pineapple", "melon", "strawberry", "mango", "watermelon"]
 
 word = random.choice(word_list)
 print(word)

@@ -1,6 +1,8 @@
-word_list = ["apple", "banana", "orange," "pear", "plum"]
-#list_of_guesses = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+# word_list = ["apple", "banana", "orange," "pear", "plum"]
+# list_of_guesses = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
 #'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'] 
+
+word_list = ["pineapple", "melon", "strawberry", "mango", "watermelon"]
 
 import random
 word = random.choice(word_list)
@@ -35,7 +37,7 @@ class Hangman:
         else: 
             self.num_lives = self.num_lives - 1 #if anything else, lives reduced by 1 
             print(f"Sorry, {guess} is not in the word.") # displays message 
-            print(f"You have {self.num_lives - 1} lives left.") # displayed number of lives left 
+            print(f"You have {self.num_lives} lives left.") # displayed number of lives left 
 
         self.list_of_guesses.append(guess) #adds guess to list of guesses
     
@@ -65,9 +67,8 @@ class Hangman:
     
     ## Milestone 5 
 
-def play_game(): # creating a function with word list passed in as a parameter
+def play_game(word_list): # creating a function with word list passed in as a parameter
     num_lives = 5 # defining a number of lives in this arguments
-    word_list = ["apple", "banana", "orange," "pear", "plum"] # passing word list as an argument to the game object
     game = Hangman(word_list, num_lives) #creating an instance of the hangman class and assigning it to a the variable game
 
     while True: 
@@ -83,7 +84,7 @@ def play_game(): # creating a function with word list passed in as a parameter
                 print("Congratulations. You won the game!")
                 break
     
-play_game()  
+play_game(word_list)
 
 #Create a function that will run all the code to run the game as expected. You should begin by creating a new script called milestone_5.py. Copy all the codes in milestone_4.py file into the newly created milestone_5.py file.
 
